@@ -462,6 +462,15 @@ body.modal-is-active {
   padding: 1em;
 }
 
+.upload-preview-item.draggable {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.upload-preview-item.draggable.selected {
+  opacity: 0.6;
+}
+
 .upload-preview-item > * + * {
   margin-top: 1em;
 }

@@ -1,8 +1,11 @@
 export default function Modal(elem, props = {}) {
-    this.elem = document.querySelector('[data-modal]');
+    this.elem = elem || document.querySelector('[data-modal]');
     this.closeAttrName = '[data-close]';
+    this.content = props.content || '';
     //bind events    
     this.elem.addEventListener('click', this.close.bind(this), false);
+
+    this.content ? this.renderContent() : null;
 };
 
 Modal.prototype = {
@@ -21,5 +24,10 @@ Modal.prototype = {
             html.classList.remove("modal-is-active");
             this.elem.hidden = true;
         }
+    },
+    renderContent() {
+        const content = this.elem.querySelector('[data-modal-content]');
+
+        content.innerHTML = this.content;
     }
 }

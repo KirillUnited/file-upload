@@ -23,6 +23,14 @@
             line-height: 19 / 14 * 1em;
             padding: 1em;
 
+            &.draggable {
+                cursor: grab;
+
+                &.selected {
+                    opacity: 0.6;
+                }
+            }
+
             &>*+* {
                 margin-top: 1em;
             }
