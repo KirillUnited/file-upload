@@ -1,4 +1,4 @@
-.vw-modal {
+.modal {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -32,7 +32,7 @@
 
     &-content {
         position: relative;
-        width: Min(710px, 100%);
+        width: Min(484px, 100%);
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         background-color: hsl(0, 0%, 100%);

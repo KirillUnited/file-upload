@@ -18,6 +18,10 @@
     text-align: center;
 }
 
+.text-truncate {
+    @include truncate(100%);
+}
+
 .hidden-more-sm {
     @include more-sm() {
         display: none !important;

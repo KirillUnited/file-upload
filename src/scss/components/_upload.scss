@@ -6,4 +6,39 @@
     background: #FFFFFF;
     border: 8px solid #EDEDED;
     border-radius: 10px;
+    padding: 20px;
+
+    &-preview {
+        &-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &-item {
+            max-width: 175px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: Max(10px, Min(getrem(14px), #{getvmin(14px)}));
+            line-height: 19 / 14 * 1em;
+            padding: 1em;
+
+            &>*+* {
+                margin-top: 1em;
+            }
+
+            h4 {
+                font-style: inherit;
+                font-weight: inherit;
+                font-size: inherit;
+                line-height: inherit;
+            }
+
+            img {
+                width: Max(50px, Min(100px, #{getvw(100px)}));
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
 }
