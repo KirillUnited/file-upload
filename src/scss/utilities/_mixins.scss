@@ -142,7 +142,7 @@
     align-self: start;
     justify-content: center;
     min-width: 11ch;
-    min-height: #{Min(getvw(78px), getrem(78px))};
+    min-height: 78px / $fontSize * 1em;
     padding: 0.25em (30px / $fontSize * 1em);
     transition: 180ms ease-in-out;
     transition-property: background, border;
@@ -157,6 +157,7 @@
     text-align: center;
     text-decoration: none;
     cursor: pointer;
+    border: 1px solid transparent;
 
     @media screen and (-ms-high-contrast: active) {
         border: 2px solid currentColor;

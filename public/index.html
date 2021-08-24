@@ -28,8 +28,8 @@
         <section class="section">
             <div class="container">
                 <div class="upload">
-                    <div class="upload-preview" hidden>
-                        <ul id="uploadPreview" class="upload-preview-list list-style">
+                    <div class="upload-preview" id="uploadPreview" hidden>
+                        <ul class="upload-preview-list list-style">
                         </ul>
                     </div>
                     <form class="upload-form">
@@ -41,13 +41,16 @@
             </div>
         </section>
     </main>
-    <div class="modal" id="modalError" tabindex="-1" data-modal role="dialog">
-        <div class="modal-content" role="document">
+    <div class="modal" id="modalError" tabindex="-1" data-modal role="dialog" hidden>
+        <div class="modal-content text-center" role="document">
             <button type="button" class="modal-close" data-close="true" aria-label="Close">
                 <span aria-hidden="true">&#10761;</span>
             </button>
-            <h2 class="modal-title text-center">Error</h2>
-            <p class="modal-text text-center">Please add not less than 2 and not more than 5 files.</p>
+            <h2 class="modal-title">Error</h2>
+            <p class="modal-text">Please add not less than 2 and not more than 5 files.</p>
+            <button type="button" class="button button-secondary button-secondary-full" data-close="true" aria-label="Close">
+                OK
+            </button>
         </div>
     </div>
     <script src="./assets/js/main.js" type="module"></script>

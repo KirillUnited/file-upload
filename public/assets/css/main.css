@@ -46,6 +46,11 @@
   text-overflow: ellipsis;
 }
 
+[hidden],
+.hidden {
+  display: none !important;
+}
+
 @media (min-width: 768px) {
   .hidden-more-sm {
     display: none !important;
@@ -259,7 +264,7 @@ legend {
       -ms-flex-pack: center;
           justify-content: center;
   min-width: 11ch;
-  min-height: Min(10.4vw, 4.875rem);
+  min-height: 2.6em;
   padding: 0.25em 1em;
   -webkit-transition: 180ms ease-in-out;
   transition: 180ms ease-in-out;
@@ -276,6 +281,7 @@ legend {
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  border: 1px solid transparent;
 }
 
 @media screen and (-ms-high-contrast: active) {
@@ -374,7 +380,30 @@ legend {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   background-color: white;
-  padding: Min(60px, 8vw) Min(75px, 2.66667vw);
+  padding: Min(50px, 6.66667vw) Min(50px, 2.66667vw);
+  border: 8px solid #F6F6F6;
+  border-radius: 10px;
+}
+
+.modal-title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: Max(15px, Min(30px, 4vmin));
+  line-height: 1.36667em;
+  color: #000000;
+  margin-bottom: 1em;
+}
+
+.modal-text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: Max(10px, Min(16px, 2.13333vmin));
+  line-height: 1.375em;
+}
+
+.modal .button {
+  width: Max(11ch, Min(175px, 23.33333vw));
+  margin-top: 2.3em;
 }
 
 html.modal-is-active,

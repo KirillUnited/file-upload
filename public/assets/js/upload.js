@@ -15,7 +15,7 @@ Upload.prototype = {
             this.upload();
         } else {
             this.elem.value = "";
-            alert("ERROR", this.elem.value);
+            new Modal().open();
         }
     },
     upload() {
@@ -32,7 +32,9 @@ Upload.prototype = {
             html += previewItem;
         }
 
-        this.preview.innerHTML = html;
+        this.preview.querySelector('.upload-preview-list').innerHTML = html;
+        this.preview.hidden = false;
+        this.elem.form.hidden = true;
     },
     renderPreview(name, size) {
         return `

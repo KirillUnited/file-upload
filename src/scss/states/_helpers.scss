@@ -1,8 +1,8 @@
 .has-img-fit {
     position: relative;
 
-    & > img,
-    & > .img-bg {
+    &>img,
+    &>.img-bg {
         @include o-fit-absolute();
     }
 }
@@ -20,6 +20,11 @@
 
 .text-truncate {
     @include truncate(100%);
+}
+
+[hidden],
+.hidden {
+    display: none !important;
 }
 
 .hidden-more-sm {
