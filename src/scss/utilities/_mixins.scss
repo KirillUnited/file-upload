@@ -1,0 +1,198 @@
+@mixin less-md($max: $md-container-max-media) {
+    @media (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin more-sm($max: $sm-container-max-media) {
+    @media (min-width: $max + 1px) {
+        @content;
+    }
+}
+
+@mixin less-sm($max: $sm-container-max-media) {
+    @media (max-width: $max) {
+        @content;
+    }
+}
+
+// placeholders
+@mixin input-placeholder {
+    &.placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder {
+        @content;
+    }
+
+    &::-moz-placeholder {
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+// усечение элемента применять к текстовым тегам типа "span" "p" и т.д.
+// пример: @include truncate(110px);
+@mixin truncate($truncation-boundary) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// Aspect Ratio Mixin
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+
+    &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+
+    >.content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+@mixin get-aspect-ratio() {
+    --aspect-ratio: calc(var(--height) / var(--width));
+    position: relative;
+    height: 0;
+    padding-bottom: calc(var(--aspect-ratio, .5625) * 100%);
+}
+
+// /* mixin for multiline */
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white) {
+    overflow: hidden;
+    position: relative;
+    line-height: $lineHeight;
+    max-height: $lineHeight * $lineCount;
+    text-align: justify;
+    margin-right: -1em;
+    padding-right: 1em;
+
+    &:before {
+        content: '...';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 1em;
+        height: 1em;
+        margin-top: 0.2em;
+        background: $bgColor;
+    }
+}
+
+// пример:
+// .block-with-text {
+//     @include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor: white);
+// }
+
+// line clamp
+@mixin line-clamp($line) {
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+//button
+@mixin btn($padding: .375rem .75rem) {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    white-space: nowrap;
+    user-select: none;
+    padding: $padding;
+}
+
+@mixin o-fit-absolute() {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+@mixin button($fontSize) {
+    display: inline-flex;
+    align-items: center;
+    align-self: start;
+    justify-content: center;
+    min-width: 11ch;
+    min-height: #{Min(getvw(78px), getrem(78px))};
+    padding: 0.25em (30px / $fontSize * 1em);
+    transition: 180ms ease-in-out;
+    transition-property: background, border;
+    border-radius: 10px / $fontSize * 1em;
+    background-color: #f3f3f3;
+    font-size: #{Min(getvw($fontSize), getrem($fontSize))};
+    font-style: normal;
+    font-weight: 600;
+    font-stretch: normal;
+    letter-spacing: normal;
+    line-height: 1.1;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+
+    @media screen and (-ms-high-contrast: active) {
+        border: 2px solid currentColor;
+    }
+
+    &:focus {
+        outline-color: transparent;
+        outline-style: solid;
+    }
+
+    &-secondary {
+        color: var(--colorSecondary);
+        font-weight: normal;
+        font-size: #{Min(getvw(20px), getrem(20px))};
+
+        &-full {
+            color: #ffffff;
+            background-color: var(--colorSecondary);
+        }
+    }
+
+    &-primary {
+        color: #ffffff;
+        background-color: var(--colorPrimary);
+    }
+
+    &-icon {
+        width: 1.5em;
+        height: 1.5em;
+        margin-right: 0.25em;
+
+        // stylelint-disable-next-line  selector-max-type
+        svg {
+            width: 100%;
+            height: 100%;
+            fill: currentColor;
+        }
+    }
+}

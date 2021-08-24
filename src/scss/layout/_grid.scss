@@ -1,0 +1,33 @@
+.wrapper {
+    padding-top: Max(15px, Min(100px, #{getvmin(100px)}));
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: getrem(1440px);
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: getrem(120px);
+    padding-right: getrem(120px);
+}
+
+.section {
+    position: relative;
+
+    &-title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: Max(16px, Min(32px, #{getvmin(32px)}));
+        margin-bottom: 32 / 32 * 1em;
+    }
+}
+
+@include less-sm {
+    .container {
+        max-width: 100%;
+        padding-left: getvw(25px);
+        padding-right: getvw(25px);
+    }
+}

@@ -1,0 +1,405 @@
+:root {
+  --colorSecondary: #009EE2;
+  --colorPrimary: #87D534;
+}
+
+/*-- states classes --*/
+.list-style {
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.has-img-fit {
+  position: relative;
+}
+
+.has-img-fit > img,
+.has-img-fit > .img-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+}
+
+.img-holder {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 10 6'%3E%3Cfilter id='b' color-interpolation-filters='sRGB'%3E%3CfeGaussianBlur stdDeviation='.5'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='discrete' tableValues='1 1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter='url(%23b)' x='0' y='0' height='100%25' width='100%25' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAGCAYAAAD68A/GAAAA70lEQVR4AQXBTUvCcADA4Z/7z9xcmbEpdSg6CBYGRUcr6WJvUESfqHN07Jt47hBdBV/AFg2FYTGd2DZzmJiz54ndnpUX51cldvcvSWoqufwGcVlgmlX01CpLmsbD4xMiZ2zeS8MQNRgQX1Gweg6/owGvLxUyxjq2+4VtO8haPIGKxKfdxfpzmUgKruMSxX4QiqDfs2i1A+RwMmM+hsr4nbSvcnNaZHnqE8yTNDpvROGU7FYSueX3MUcuqbUExYsd9jICY66yyOrUm22aHY/vmYec304jRIRuaJROjmg8V/G8IXflawoHhxx/1KjVu/wDycJbrJ7yuz0AAAAASUVORK5CYII='/%3E%3C/svg%3E");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hidden-more-sm {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hidden-less-sm {
+    display: none !important;
+  }
+}
+
+/*
+ * [Modified] Modern CSS Reset
+ * @link https://github.com/hankchizljaw/modern-css-reset
+*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+p,
+li,
+h1,
+h2,
+h3,
+h4 {
+  word-break: break-word;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  color: #545454;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  padding-bottom: 0;
+}
+
+/* Make images easier to work with */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+  line-height: inherit;
+  color: inherit;
+  white-space: normal;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html {
+    scroll-behavior: initial;
+  }
+}
+
+.wrapper {
+  padding-top: Max(15px, Min(100px, 13.33333vmin));
+}
+
+.container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 90rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 7.5rem;
+  padding-right: 7.5rem;
+}
+
+.section {
+  position: relative;
+}
+
+.section-title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: Max(16px, Min(32px, 4.26667vmin));
+  margin-bottom: 1em;
+}
+
+@media (max-width: 767px) {
+  .container {
+    max-width: 100%;
+    padding-left: 3.33333vw;
+    padding-right: 3.33333vw;
+  }
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 99999;
+}
+
+.loading-spinner {
+  -webkit-animation: loading-spinner-rotate 1s linear infinite;
+          animation: loading-spinner-rotate 1s linear infinite;
+  background: transparent;
+  border: 4px solid #439a99;
+  border-bottom-color: #fff;
+  border-radius: 50%;
+  height: 50px;
+  left: 50%;
+  opacity: .7;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  margin: -25px 0 0 -25px;
+}
+
+@-webkit-keyframes loading-spinner-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes loading-spinner-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+/* Button */
+.button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: start;
+      align-self: start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: 11ch;
+  min-height: Min(10.4vw, 4.875rem);
+  padding: 0.25em 1em;
+  -webkit-transition: 180ms ease-in-out;
+  transition: 180ms ease-in-out;
+  -webkit-transition-property: background, border;
+  transition-property: background, border;
+  border-radius: 0.33333em;
+  background-color: #f3f3f3;
+  font-size: Min(4vw, 1.875rem);
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: normal;
+  letter-spacing: normal;
+  line-height: 1.1;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .button {
+    border: 2px solid currentColor;
+  }
+}
+
+.button:focus {
+  outline-color: transparent;
+  outline-style: solid;
+}
+
+.button-secondary {
+  color: var(--colorSecondary);
+  font-weight: normal;
+  font-size: Min(2.66667vw, 1.25rem);
+}
+
+.button-secondary-full {
+  color: #ffffff;
+  background-color: var(--colorSecondary);
+}
+
+.button-primary {
+  color: #ffffff;
+  background-color: var(--colorPrimary);
+}
+
+.button-icon {
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.25em;
+}
+
+.button-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.button.upload-btn {
+  width: Max(11ch, Min(308px, 41.06667vw));
+}
+
+.vw-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.vw-modal:not([hidden]), .vw-modal:not(.hidden) {
+  -webkit-animation: fadeIn .4s linear;
+          animation: fadeIn .4s linear;
+}
+
+.vw-modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  background-color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 0.9375em;
+}
+
+.vw-modal-content {
+  position: relative;
+  width: Min(710px, 100%);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: white;
+  padding: Min(60px, 8vw) Min(75px, 2.66667vw);
+}
+
+html.modal-is-active,
+body.modal-is-active {
+  overflow: hidden !important;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Upload block */
+.upload {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  min-height: Max(100px, Min(333px, 44.4vmin));
+  background: #FFFFFF;
+  border: 8px solid #EDEDED;
+  border-radius: 10px;
+}

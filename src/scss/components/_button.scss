@@ -1,0 +1,9 @@
+/* Button */
+.button {
+    $fontSize: 30px;
+    @include button($fontSize);
+
+    &.upload-btn {
+        width:  Max(11ch, Min(308px, #{getvw(308px)}));
+    }
+}

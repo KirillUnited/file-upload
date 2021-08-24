@@ -1,0 +1,9 @@
+/* Upload block */
+.upload {
+    display: grid;
+    place-items: center;
+    min-height: Max(100px, Min(333px, #{getvmin(333px)}));
+    background: #FFFFFF;
+    border: 8px solid #EDEDED;
+    border-radius: 10px;
+}
