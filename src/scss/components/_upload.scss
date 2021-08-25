@@ -46,6 +46,7 @@
                 width: Max(50px, Min(100px, #{getvw(100px)}));
                 margin-left: auto;
                 margin-right: auto;
+                pointer-events: none;
             }
         }
     }

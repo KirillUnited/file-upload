@@ -73,7 +73,6 @@ Upload.prototype = {
             evt.target.classList.remove(`selected`);
         });
         previewList.addEventListener(`dragover`, (evt) => {
-            // Разрешаем сбрасывать элементы в эту область
             evt.preventDefault();
 
             const activeElement = previewList.querySelector(`.selected`);

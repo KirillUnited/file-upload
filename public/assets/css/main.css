@@ -486,4 +486,5 @@ body.modal-is-active {
   width: Max(50px, Min(100px, 13.33333vw));
   margin-left: auto;
   margin-right: auto;
+  pointer-events: none;
 }
