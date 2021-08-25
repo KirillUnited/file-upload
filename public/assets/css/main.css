@@ -445,6 +445,8 @@ body.modal-is-active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -454,6 +456,7 @@ body.modal-is-active {
 }
 
 .upload-preview-item {
+  width: 100%;
   max-width: 175px;
   font-style: normal;
   font-weight: normal;
